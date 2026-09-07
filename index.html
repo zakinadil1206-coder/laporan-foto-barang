@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Laporan Foto Barang</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand-block">
+          <span class="brand-badge">OFFICE REPORT</span>
+          <div>
+            <span class="eyebrow">PEMBUAT LAPORAN FOTO</span>
+            <h1>Laporan Barang</h1>
+            <p>Pake sistem pasti praktis2.</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="download" class="secondary" disabled>Download Word</button>
+          <button id="send" class="primary" disabled>Kirim ke Bos</button>
+          <button id="whatsapp" class="primary alt" disabled>Kirim via WhatsApp</button>
+        </div>
+      </header>
+
+      <section class="controls">
+        <label>
+          Judul laporan
+          <input id="title" placeholder="Contoh: Laporan Barang Dapur" />
+        </label>
+        <label>
+          Tanggal
+          <input id="date" type="date" />
+        </label>
+        <label class="file-label">
+          Upload foto barang
+          <input id="files" type="file" accept="image/*" multiple />
+          <span class="file-button">Pilih banyak foto</span>
+        </label>
+        <button id="reset" class="secondary">Reset</button>
+      </section>
+
+      <section class="content">
+        <div class="items-panel">
+          <div class="panel-head">
+            <strong>Daftar foto</strong>
+            <span id="count">0 foto</span>
+          </div>
+          <p class="help">Setiap foto akan menjadi satu kotak di Word. Isi nama barang di bawahnya.</p>
+          <div id="items" class="items"></div>
+        </div>
+
+        <div class="sheet-wrap">
+          <div class="sheet" id="sheet">
+            <div class="sheet-date" id="sheetDate">Tanggal laporan</div>
+            <h2 id="sheetTitle">Laporan Barang</h2>
+            <div id="preview" class="preview"></div>
+          </div>
+        </div>
+      </section>
+
+      <p id="status" role="status"></p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
